@@ -23,8 +23,14 @@ public func topUp(amount: Nat) {
  //CandidUI => testing via web browser => https://internetcomputer.org/docs/current/developer-docs/backend/candid/candid-howto
 // http://localhost:8000/?canisterId=r7inp-6aaaa-aaaaa-aaabq-cai&id=rrkah-fqaaa-aaaaa-aaaaq-cai
  public func widrawl(amount: Nat) {
+  let tempValue: Int = currentValue - amount;
+if (tempValue >= 0) {
   currentValue -= amount;
   Debug.print(debug_show(currentValue));
+}
+else {
+  Debug.print("Not enough money!");
+};
  };
 //topUp();
 
