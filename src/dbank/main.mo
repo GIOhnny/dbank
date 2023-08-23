@@ -20,6 +20,7 @@ public func topUp(amount: Nat) {
   //http://localhost:8000/?canisterId=r7inp-6aaaa-aaaaa-aaabq-cai&id=rrkah-fqaaa-aaaaa-aaaaq-cai
  };
  
+ //CandidUI => testing via web browser => https://internetcomputer.org/docs/current/developer-docs/backend/candid/candid-howto
 // http://localhost:8000/?canisterId=r7inp-6aaaa-aaaaa-aaabq-cai&id=rrkah-fqaaa-aaaaa-aaaaq-cai
  public func widrawl(amount: Nat) {
   currentValue -= amount;
