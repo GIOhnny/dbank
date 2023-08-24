@@ -2,16 +2,17 @@ import Debug "mo:base/Debug";
 
 //actor = class
 actor DBank {
-//variable  
-  var currentValue = 300;
-  currentValue := 100;
+//variable
+//stable variable == persistent variable between dfs deploy
+  stable var currentValue = 300;
+  //currentValue := 100;
 
 //constant
   let id = 1234122315412;
   
 //debug print accepts only text
 //debug_show converts int to text  
-// Debug.print(debug_show(id));
+//Debug.print(debug_show(id));
  
  //function
 public func topUp(amount: Nat) {
@@ -22,7 +23,7 @@ public func topUp(amount: Nat) {
  
  //CandidUI => testing via web browser => https://internetcomputer.org/docs/current/developer-docs/backend/candid/candid-howto
 // http://localhost:8000/?canisterId=r7inp-6aaaa-aaaaa-aaabq-cai&id=rrkah-fqaaa-aaaaa-aaaaq-cai
- public func widrawl(amount: Nat) {
+ public func widrawn(amount: Nat) {
   let tempValue: Int = currentValue - amount;
 if (tempValue >= 0) {
   currentValue -= amount;
@@ -33,5 +34,12 @@ else {
 };
  };
 //topUp();
+
+//query function with return value
+public query func checkBalance(): async Nat {
+  return currentValue;
+};
+
+
 
  };

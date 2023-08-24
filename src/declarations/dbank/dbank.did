@@ -1,4 +1,5 @@
 service : {
+  checkBalance: () -> (nat) query;
   topUp: (nat) -> () oneway;
-  widrawl: (nat) -> () oneway;
+  widrawn: (nat) -> () oneway;
 }
